@@ -10,6 +10,16 @@ fn main():
     var mn2 = MyNumb(9)
     mod_my_nu(mn2)
     repeat[2]("hi")
+    var z = my_pow(exp=3, base=3)
+    print(z)
+    var s = sum(3, 5, 1)
+    print(s)
+    var hello: String = "hello"
+    var welcome: String = "welcome"
+    var goodBy: String = "good-bye"
+    make_worldly(hello, welcome, goodBy)
+    print(hello, welcome, goodBy)
+    print(count_many_things(5, 11.7, 2))
 
 
 fn add_one(x: Int) -> Int:
@@ -56,3 +66,30 @@ fn mod_my_nu[H: HasAdd](x: H):
 fn repeat[count: Int](msg: String):
     for _i in range(count):
         print(msg)
+
+
+fn my_pow(base: Int, exp: Int = 2) -> Int:
+    return base**exp
+
+
+fn sum(*values: Int) -> Int:
+    var sum: Int = 0
+    for value in values:
+        sum = sum + value
+    return sum
+
+
+fn make_worldly(inout *strs: String):
+    for s in strs:
+        s[] += " world"
+
+
+fn count_many_things[*ArgTypes: Intable](*args: *ArgTypes) -> Int:
+    var total = 0
+
+    @parameter
+    fn add[Type: Intable](value: Type):
+        total += int(value)
+
+    args.each[add]()
+    return total

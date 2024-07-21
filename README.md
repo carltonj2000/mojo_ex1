@@ -1,6 +1,6 @@
 # Mojo Language Examples 1
 
-Use `source max-venv/bin/activate` to setup python's venv.
+Use `source ~/max-venv/bin/activate` to setup python's venv.
 
 | Command               | Description                      |
 | --------------------- | -------------------------------- |
@@ -17,4 +17,5 @@ Progress noted below.
 
 | Date    | Description                                         |
 | ------- | --------------------------------------------------- |
+| 7/21/24 | Stopped at start of `Variables` section             |
 | 7/19/24 | Stopped at start of `Blocks and statements` section |
